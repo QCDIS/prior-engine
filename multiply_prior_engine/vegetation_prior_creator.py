@@ -17,7 +17,11 @@ from matplotlib import pyplot as plt
 from scipy import interpolate as RegularGridInterpolator
 from netCDF4 import Dataset
 from shapely.wkt import loads
-import gdal
+try:
+  from osgeo import gdal
+except ImportError:
+  import gdal
+
 from .prior_creator import PriorCreator
 
 SUPPORTED_VARIABLES = ['lai', 'cab', 'cb', 'car', 'cw', 'cdm', 'n',
