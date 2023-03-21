@@ -2,9 +2,6 @@
 
 from setuptools import setup
 
-with open('requirements.txt') as r:
-    requirements = r.read().splitlines()
-requirements = [r.split("=")[0] for r in requirements]
 
 __version__ = None
 __status__ = None
@@ -31,5 +28,5 @@ setup(name='multiply-prior-engine',
               'user_prior = multiply_prior_engine.user_prior:main'
           ]
       },
-      install_requires=requirements
+      install_requires=[]
       )
